@@ -32,6 +32,7 @@ void SchedulerFCFS::print_results()
      */
 void SchedulerFCFS::simulate()
 {
+         // changes list to be correct size for the list
 	process_list_hold->shrink_to_fit();
 	//cout << "in scheduler" << endl;
 	//cout << process_list_hold->capacity()<< endl;
@@ -41,7 +42,7 @@ void SchedulerFCFS::simulate()
 	cout << "Running Process " << process_list_hold->at(current_process_count).name << " for " << process_list_hold->at(current_process_count).burst_time << " time units" << endl;
 	while(1)
 	{
-
+// while it has processes it will hold 
 		if(process_list_hold->at(current_process_count).burst_time <= 0)
 		{
 			//cout << "          process count" << (process_list_hold->capacity())-2 << "<" << "current_process_count" << current_process_count << endl;
@@ -68,7 +69,7 @@ void SchedulerFCFS::simulate()
 	}
 	
 }
-
+// shows the average time for this scheduler
 void SchedulerFCFS::get_avgs()
 {
 	double total = 0;
