@@ -15,6 +15,7 @@
 SchedulerSJF::SchedulerSJF()
 {
 }
+//initializes the list
 void SchedulerSJF::init(std::vector<PCB>& process_list)
 {
 	process_list_hold = &process_list;
@@ -64,7 +65,7 @@ void SchedulerSJF::simulate()
 	
 	
 }
-
+//Finds the next job to do
 int SchedulerSJF::find_next_shortest()
 {
 	//find next process that doesnt have 0 burst time into "shortest process"
@@ -100,7 +101,7 @@ int SchedulerSJF::no_burst_time()
 	}
 	return 1;
 }
-
+// prints the avg time
 void SchedulerSJF::get_avgs()
 {
 	double total = 0;
